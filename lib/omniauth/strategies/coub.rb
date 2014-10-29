@@ -4,8 +4,6 @@ module OmniAuth
   module Strategies
     class Coub < OmniAuth::Strategies::OAuth2
       COUB_HOST = ENV['OA_COUB_HOST'] || "coub.com"
-      puts "ENV #{ENV.inspect}"
-      puts "COUB HOST #{COUB_HOST}"
 
       option :name, 'coub'
       option :client_options, {
