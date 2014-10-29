@@ -8,8 +8,8 @@ module OmniAuth
       option :name, 'coub'
       option :client_options, {
         :site => "http://#{COUB_HOST}/api/v2",
-        :authorize_url => "http://#{COUB_HOST}/oauth2/authorize",
-        :token_url => "http://#{COUB_HOST}/oauth2/token.json"
+        :authorize_url => "http://#{COUB_HOST}/oauth/authorize",
+        :token_url => "http://#{COUB_HOST}/oauth/token.json"
       }
 
       uid { raw_info['id'] }
