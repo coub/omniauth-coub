@@ -19,7 +19,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access.get("api/v2/users/me").parsed
+        @raw_info ||= access.get("sers/me").parsed
       end
 
     end
