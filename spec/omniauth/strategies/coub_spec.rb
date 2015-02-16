@@ -18,11 +18,11 @@ describe OmniAuth::Strategies::Coub do
     end
 
     it "has correct authorize_url" do
-      subject.options.client_options.authorize_url.should eq("http://coub.com/oauth2/authorize")
+      subject.options.client_options.authorize_url.should eq("http://coub.com/oauth/authorize")
     end
 
     it "has correct token_url" do
-      subject.options.client_options.token_url.should eq("http://coub.com/oauth2/token.json")
+      subject.options.client_options.token_url.should eq("http://coub.com/oauth/token.json")
     end
   end
 
