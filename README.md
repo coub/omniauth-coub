@@ -28,7 +28,7 @@ $ gem install omniauth-coub
 
 ```ruby
 use OmniAuth::Builder do
-  provider :coub, ENV['COUB_KEY'], ENV['COUB_SECRET']
+  provider :coub, ENV['COUB_KEY'], ENV['COUB_SECRET'], scope: 'logged_in,channel_edit,like'
 end
 ```
 
@@ -36,7 +36,7 @@ end
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :coub, ENV['COUB_KEY'], ENV['COUB_SECRET']
+  provider :coub, ENV['COUB_KEY'], ENV['COUB_SECRET'], scope: 'logged_in,channel_edit,like'
 end
 ```
 

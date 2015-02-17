@@ -12,6 +12,17 @@ module OmniAuth
         :token_url => "http://#{COUB_HOST}/oauth/token.json"
       }
 
+      def authorize_params
+        super.tap do |params|
+          raw_scope = params['scope']
+
+          if raw_scope.present?
+            scope_list = raw_scope.split(',')
+            params['scope'] = scope_list.join(' ')
+          end
+        end
+      end
+
       uid { raw_info['id'] }
 
       extra do
