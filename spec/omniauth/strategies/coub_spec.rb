@@ -1,9 +1,20 @@
 require 'spec_helper'
 
 describe OmniAuth::Strategies::Coub do
+  let(:app) {
+    -> { [200, {}, ["Hello."]] }
+  }
 
   subject do
-    OmniAuth::Strategies::Coub.new({})
+    OmniAuth::Strategies::Coub.new(app, 'app_id', 'app_secret', @options || {})
+  end
+
+  before do
+    OmniAuth.config.test_mode = true
+  end
+
+  after do
+    OmniAuth.config.test_mode = false
   end
 
   context "general" do
@@ -26,4 +37,10 @@ describe OmniAuth::Strategies::Coub do
     end
   end
 
+  context "scopes" do
+    it 'joins scopes' do
+      @options = { 'scope' => 'logged_in,channel_edit' }
+      subject.authorize_params['scope'].should eq('logged_in channel_edit')
+    end
+  end
 end

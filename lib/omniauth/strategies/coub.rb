@@ -16,7 +16,7 @@ module OmniAuth
         super.tap do |params|
           raw_scope = params['scope']
 
-          if raw_scope.present?
+          if raw_scope
             scope_list = raw_scope.split(',')
             params['scope'] = scope_list.join(' ')
           end
