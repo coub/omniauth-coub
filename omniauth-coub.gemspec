@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["me@kgor.in"]
   gem.description   = "Provides an OmniAuth strategy for Coub to make authentication with the Coub API simple"
   gem.summary       = "An OmniAuth strategy for Coub"
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/coub/omniauth-coub"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
