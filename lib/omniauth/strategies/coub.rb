@@ -25,6 +25,10 @@ module OmniAuth
 
       uid { raw_info['id'] }
 
+      info do
+        raw_info
+      end
+
       extra do
         {:raw_info => raw_info}
       end
